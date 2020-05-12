@@ -24,16 +24,16 @@ Here are the parameters:
 <br/>
 `dump directory`
 <br/>
-`DRYRUN | RUN`      
+`FILEIT | RUNIT`      
 <br/>
 <br/>
-In DRYRUN mode, pg dump commands are exported to STDOUT.  In RUN mode, they are immediately executed in background.
+In FILEIT mode, pg dump commands are exported to STDOUT.  In RUNIT mode, they are immediately executed asynchronously in background.
 <br/>
 ## Requirements
 1. linux, pg_dump, psql
 <br/>
 
 ## Examples
-pg_dumpschemas.sh   localhost   mydb   mydbuser  5432   /opt/progs   DRYRUN
+pg_dumpschemas.sh   localhost   mydb   mydbuser  5432   /opt/progs   FILEIT
 <br/><br/>
 
