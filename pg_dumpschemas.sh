@@ -59,14 +59,14 @@ do
          #echo "schema:=$afield"
 		 AFILE="${DMPDIR}/${afield}_ddlonly_${TODAY}.sql"
          if [ "${action}" == "fileit" ]; then		 
-		     echo "nohup ${PGDMP} -h $DBHOST -d ${DBNAME} -p ${DBPORT} -U ${DBUSER}  --schema-only --schema ${afield} --format plain --clean --encoding UTF8 > ${AFILE} &"
-		 else
-		     echo "starting background dump for schema, ${afield}..."
-		     results=`nohup ${PGDMP} -h $DBHOST -d ${DBNAME} -p ${DBPORT} -U ${DBUSER}  --schema-only --schema ${afield} --format plain --clean --encoding UTF8 > ${AFILE} & `
-	     fi		 
+	     echo "nohup ${PGDMP} -h $DBHOST -d ${DBNAME} -p ${DBPORT} -U ${DBUSER}  --schema-only --schema ${afield} --format plain --clean --encoding UTF8 > ${AFILE} &"
+	 else
+	     echo "starting background dump for schema, ${afield}..."
+	     results=`nohup ${PGDMP} -h $DBHOST -d ${DBNAME} -p ${DBPORT} -U ${DBUSER}  --schema-only --schema ${afield} --format plain --clean --encoding UTF8 > ${AFILE} & `
+	 fi		 
      elif [ "$cols" -eq 2 ]; then
          #echo "owner:=$afield"
-		 :
+	 :
      else
          echo "Unhandled column: ${cols} value:=$afield"
      fi    
