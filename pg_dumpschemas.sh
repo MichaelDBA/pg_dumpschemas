@@ -70,7 +70,7 @@ do
      else
          echo "Unhandled column: ${cols} value:=$afield"
      fi    
-	 sleep 1
+	 sleep 0.1
   done
 done
 exit 0
