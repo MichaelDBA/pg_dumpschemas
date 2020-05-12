@@ -3,23 +3,23 @@
 # Bash script that dumps all the schema DDL for a particular database.  It does this in parallel as asynchronous background tasks.
 # Modify QUERY to restrict or loosen restrictions for finding the schema list you want to export.
 # example:
-# pg_dumpschemas.sh localhost mydb mydbuser 5432 /apps/opt/postgres/sc DRYRUN
+# pg_dumpschemas.sh localhost mydb mydbuser 5432 /apps/opt/postgres/sc FILEIT
 
 set -e
 set -u
 
 args=$#
 if [ $args -ne 6 ]; then
-    echo "ERROR: `date`   Invalid parameters. Expected 6, got ${args}.  pg_dumpschemas.sh <host> <dbname> <dbuser> <dbport> <target directory> DRYRUN | RUN." 
+    echo "ERROR: `date`   Invalid parameters. Expected 6, got ${args}.  pg_dumpschemas.sh <host> <dbname> <dbuser> <dbport> <target directory> FILEIT | RUNIT." 
     exit 1
 fi
 action=`echo "${6}" | tr '[:upper:]' '[:lower:]'`
-if [ "${action}" == "dryrun" ]; then
-    echo "DRYRUN mode"
-elif [ "${action}" == "run" ]; then
-    echo "RUN mode"
+if [ "${action}" == "fileit" ]; then
+    echo "FILEIT mode"
+elif [ "${action}" == "runit" ]; then
+    echo "RUNIT mode"
 else
-    echo "ERROR: `date`   Invalid action parameter. Expected DRYRUN OR RUN, but got ${6}.  pg_dumpschemas.sh <host> <dbname> <dbuser> <dbport> <target directory> DRYRUN | RUN." 
+    echo "ERROR: `date`   Invalid action parameter. Expected FILEIT OR RUNIT, but got ${6}.  pg_dumpschemas.sh <host> <dbname> <dbuser> <dbport> <target directory> FILEIT | RUNIT." 
     exit 1
 fi
 
@@ -58,7 +58,7 @@ do
      if [ "$cols" -eq 1 ]; then
          #echo "schema:=$afield"
 		 AFILE="${DMPDIR}/${afield}_ddlonly_${TODAY}.sql"
-         if [ "${action}" == "dryrun" ]; then		 
+         if [ "${action}" == "fileit" ]; then		 
 		     echo "nohup ${PGDMP} -h $DBHOST -d ${DBNAME} -p ${DBPORT} -U ${DBUSER}  --schema-only --schema ${afield} --format plain --clean --encoding UTF8 > ${AFILE} &"
 		 else
 		     echo "starting background dump for schema, ${afield}..."
