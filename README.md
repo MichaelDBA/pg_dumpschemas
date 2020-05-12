@@ -24,10 +24,11 @@ Here are the parameters:
 <br/>
 `dump directory`
 <br/>
-`DRYRUN | RUN`      In DRYRUN mode, pg dump commands are exported to STDOUT.  In RUN mode, they are immediately execute in background
+`DRYRUN | RUN`      
 <br/>
 <br/>
-
+In DRYRUN mode, pg dump commands are exported to STDOUT.  In RUN mode, they are immediately execute in background.
+<br/>
 ## Requirements
 1. pg_dump, psql
 <br/>
