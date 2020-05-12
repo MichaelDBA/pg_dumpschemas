@@ -27,7 +27,7 @@ Here are the parameters:
 `FILEIT | RUNIT`      
 <br/>
 <br/>
-In FILEIT mode, pg dump commands are exported to STDOUT.  In RUNIT mode, they are immediately executed asynchronously in background.
+In FILEIT mode, pg dump commands are exported to STDOUT.  In RUNIT mode, they are immediately executed asynchronously in background.  FILEIT mode is useful when you want to parse out the schema dumps and do them in smaller size batches, or globally change pg_dump parameters to do other things like instead of DDL just get data, or both.
 <br/>
 ## Requirements
 1. linux, pg_dump, psql
