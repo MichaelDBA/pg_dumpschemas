@@ -34,7 +34,7 @@ In FILEIT mode, pg dump commands are exported to STDOUT.  In RUNIT mode, they ar
 <br/>
 
 ## Examples
-pg_dumpschemas.sh   localhost   mydb   mydbuser  5432   /opt/progs   FILEIT
+```pg_dumpschemas.sh   localhost   mydb   mydbuser  5432   /opt/progs   FILEIT```
 <br/><br/>
 ```
 cat backup.sh
