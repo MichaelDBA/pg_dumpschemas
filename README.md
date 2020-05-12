@@ -34,6 +34,6 @@ In DRYRUN mode, pg dump commands are exported to STDOUT.  In RUN mode, they are 
 <br/>
 
 ## Examples
-pg_dumpschemas.sh   localhost   mydb   mydbuser  5432   /apps/opt/postgres/sc   DRYRUN
+pg_dumpschemas.sh   localhost   mydb   mydbuser  5432   /opt/progs   DRYRUN
 <br/><br/>
 
