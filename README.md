@@ -1,7 +1,7 @@
 # pg_dumpschemas
 This is a bash script which does pg dumps in parallel for all schemas in a given database as linux background jobs.  Currently, it only does **schema-only** dumps, not data dumps, but this can easily be enhanced by changing the format of the pg_dump statement contained within the script.
 
-(c) 2020 SQLEXEC LLC
+(c) 2021 SQLEXEC LLC
 <br/>
 GNU V3 and MIT licenses are conveyed accordingly.
 <br/>
