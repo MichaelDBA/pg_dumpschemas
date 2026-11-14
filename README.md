@@ -30,7 +30,7 @@ Here are the parameters:
 `CUSTOM | DIRECTORY`
 <br/>
 <br/>
-Both mode and format parameters are case-insensitive.
+Both mode (DRYRUN/RUNIT) and format (CUSTOM/DIRECTORY) parameters are case-insensitive.
 
 ## DRYRUN Mode
 In DRYRUN mode, pg dump commands are exported to STDOUT, but not actually run.  In RUNIT mode, they are immediately executed asynchronously in background.  DRYRUN mode is useful when you want to parse out the schema dumps and do them in smaller size batches, or globally change pg_dump parameters to do other things like instead of DDL just get data, or both. 
