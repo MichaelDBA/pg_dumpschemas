@@ -1,7 +1,7 @@
 # pg_dumpschemas
 This is a bash script which does pg dumps in parallel for all schemas in a given database as linux background jobs.  Currently, it only does **schema-only** dumps, not data dumps, but this can easily be enhanced by changing the format of the pg_dump statement contained within the script.
 
-(c) 2021 SQLEXEC LLC
+(c) 2021-2026 SQLEXEC LLC
 <br/>
 GNU V3 and MIT licenses are conveyed accordingly.
 <br/>
@@ -24,17 +24,19 @@ Here are the parameters:
 <br/>
 `dump directory`
 <br/>
-`FILEIT | RUNIT`      
+`DRYRUN | RUNIT`      
+<br/>
+`CUSTOM | DIRECTORY`      
 <br/>
 <br/>
-In FILEIT mode, pg dump commands are exported to STDOUT.  In RUNIT mode, they are immediately executed asynchronously in background.  FILEIT mode is useful when you want to parse out the schema dumps and do them in smaller size batches, or globally change pg_dump parameters to do other things like instead of DDL just get data, or both.
+In DRYRUN mode, pg dump commands are exported to STDOUT, but not actually run.  In RUNIT mode, they are immediately executed asynchronously in background.  DRYRUN mode is useful when you want to parse out the schema dumps and do them in smaller size batches, or globally change pg_dump parameters to do other things like instead of DDL just get data, or both.
 <br/>
 ## Requirements
 1. linux, pg_dump, psql
 <br/>
 
 ## Examples
-```pg_dumpschemas.sh   localhost   mydb   mydbuser  5432   /opt/progs   FILEIT```
+```pg_dumpschemas.sh localhost mydb mydbuser 5432 /my/output/dir/pg_dumpschemas RUNIT DIRECTORY```
 <br/><br/>
 ```
 cat backup.sh
