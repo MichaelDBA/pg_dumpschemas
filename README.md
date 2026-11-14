@@ -40,9 +40,9 @@ In DRYRUN mode, pg dump commands are exported to STDOUT, but not actually run.  
 **CUSTOM**: Uses PostgreSQL custom archive format (-Fc), producing one archive file per schema.<br/>
 **DIRECTORY**: Uses PostgreSQL directory archive format (-Fd), producing one directory per schema.<br/>
 
-<br/>
+
 ## Requirements
-1. linux, pg_dump, psql
+linux, pg_dump, psql
 <br/>
 
 ## Examples
