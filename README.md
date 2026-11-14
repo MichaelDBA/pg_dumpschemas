@@ -1,6 +1,4 @@
 # pg_dumpschemas
-**pg_dumpschemas.sh** is a Bash utility that generates or executes parallel PostgreSQL schema-only dumps for a specified database. It supports PostgreSQL Custom and Directory archive formats and can either display the generated commands (DRYRUN) or execute them asynchronously (RUNIT). It excludes these schemas: pg_catalog, information_schema, and public.
-
 **pg_dumpschemas.sh** is a Bash utility that generates or executes parallel PostgreSQL schema-only dumps for a specified database. It supports PostgreSQL Custom and Directory archive formats and can either display the generated commands (DRYRUN) or execute them asynchronously (RUNIT).  The script excludes PostgreSQL system schemas, pg_..., information_schema, public, and rdsadmin.
 
 
@@ -32,10 +30,10 @@ Here are the parameters:
 `CUSTOM | DIRECTORY`
 <br/>
 <br/>
+Both mode and format parameters are case-insensitive.
 
 ## DRYRUN Mode
-In DRYRUN mode, pg dump commands are exported to STDOUT, but not actually run.  In RUNIT mode, they are immediately executed asynchronously in background.  DRYRUN mode is useful when you want to parse out the schema dumps and do them in smaller size batches, or globally change pg_dump parameters to do other things like instead of DDL just get data, or both. Both mode and format parameters are case-insensitive.
-
+In DRYRUN mode, pg dump commands are exported to STDOUT, but not actually run.  In RUNIT mode, they are immediately executed asynchronously in background.  DRYRUN mode is useful when you want to parse out the schema dumps and do them in smaller size batches, or globally change pg_dump parameters to do other things like instead of DDL just get data, or both. 
 ## Archive Formats
 **CUSTOM**: Uses PostgreSQL custom archive format (-Fc), producing one archive file per schema.<br/>
 **DIRECTORY**: Uses PostgreSQL directory archive format (-Fd), producing one directory per schema.<br/>
