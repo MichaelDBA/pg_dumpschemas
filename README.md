@@ -43,7 +43,7 @@ cat backup.sh
 #!/bin/bash
 mkdir -p test
 mkdir -p test/$1
-./pg_dumpschemas.sh  127.0.0.1 $1 replicate 5432 test/$1 FILEIT > test/$1/$1_db.dump
+./pg_dumpschemas.sh  127.0.0.1 $1 replicate 5432 test/$1 DRYRUN CUSTOM > test/$1/$1_db.dump
 cat  test/$1/$1_db.dump | xargs -L 1 -P 10 -t -I CMD bash -c CMD
 ```
 <br/><br/>
