@@ -33,10 +33,11 @@ Here are the parameters:
 Both mode (DRYRUN/RUNIT) and format (CUSTOM/DIRECTORY) parameters are case-insensitive.
 
 ## DRYRUN Mode
-In DRYRUN mode, pg dump commands are exported to STDOUT, but not actually run.  In RUNIT mode, they are immediately executed asynchronously in background.  DRYRUN mode is useful when you want to parse out the schema dumps and do them in smaller size batches, or globally change pg_dump parameters to do other things like instead of DDL just get data, or both. 
+In **DRYRUN** mode, pg dump commands are exported to STDOUT, but not actually run.  In **RUNIT** mode, they are immediately executed asynchronously in background.  **DRYRUN** mode is useful when you want to parse out the schema dumps and do them in smaller size batches, or globally change pg_dump parameters to do other things like instead of DDL just get data, or both. 
+
 ## Archive Formats
-**CUSTOM**: Uses PostgreSQL custom archive format (-Fc), producing one archive file per schema.<br/>
-**DIRECTORY**: Uses PostgreSQL directory archive format (-Fd), producing one directory per schema.<br/>
+**CUSTOM**: Uses PostgreSQL custom archive format (**-Fc**), producing one archive file per schema.<br/>
+**DIRECTORY**: Uses PostgreSQL directory archive format (**-Fd**), producing one directory per schema.<br/>
 
 
 ## Requirements
