@@ -1,5 +1,6 @@
 # pg_dumpschemas
-This is a bash script which does pg dumps in parallel for all schemas in a given database as linux background jobs.  Currently, it only does **schema-only** dumps, not data dumps, but this can easily be enhanced by changing the format of the pg_dump statement contained within the script.
+**pg_dumpschemas.sh** is a Bash utility that generates or executes parallel PostgreSQL schema-only dumps for a specified database. It supports PostgreSQL Custom and Directory archive formats and can either display the generated commands (DRYRUN) or execute them asynchronously (RUNIT). It excludes these schemas: pg_catalog, information_schema, and public.
+
 
 (c) 2021-2026 SQLEXEC LLC
 <br/>
@@ -38,13 +39,6 @@ In DRYRUN mode, pg dump commands are exported to STDOUT, but not actually run.  
 ## Examples
 ```pg_dumpschemas.sh localhost mydb mydbuser 5432 /my/output/dir/pg_dumpschemas RUNIT DIRECTORY```
 <br/><br/>
-```
-cat backup.sh
-#!/bin/bash
-mkdir -p test
-mkdir -p test/$1
-./pg_dumpschemas.sh  127.0.0.1 $1 replicate 5432 test/$1 DRYRUN CUSTOM > test/$1/$1_db.dump
-cat  test/$1/$1_db.dump | xargs -L 1 -P 10 -t -I CMD bash -c CMD
-```
+
 <br/><br/>
 
