@@ -24,9 +24,9 @@ Here are the parameters:
 <br/>
 `dump directory`
 <br/>
-`DRYRUN | RUNIT`      
+`DRYRUN | RUNIT`
 <br/>
-`CUSTOM | DIRECTORY`      
+`CUSTOM | DIRECTORY`
 <br/>
 <br/>
 In DRYRUN mode, pg dump commands are exported to STDOUT, but not actually run.  In RUNIT mode, they are immediately executed asynchronously in background.  DRYRUN mode is useful when you want to parse out the schema dumps and do them in smaller size batches, or globally change pg_dump parameters to do other things like instead of DDL just get data, or both.
