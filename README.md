@@ -45,7 +45,7 @@ Linux, Bash, PostgreSQL pg_dump and psql utilities available in PATH.
 <br/>
 
 ## Examples
-```pg_dumpschemas.sh localhost mydb mydbuser 5432 /my/output/dir/pg_dumpschemas RUNIT DIRECTORY```
+```pg_dumpschemas.sh localhost mydb mydbuser 5432 /my/output/dir/pg_dumpschemas RUNIT DIRECTORY```<br/>
 ```pg_dumpschemas.sh localhost mydb mydbuser 5432 /my/output/dir/pg_dumpschemas DRYRUN CUSTOM```
 <br/><br/>
 
