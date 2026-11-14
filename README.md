@@ -4,7 +4,7 @@
 
 (c) 2021-2026 SQLEXEC LLC
 <br/>
-GNU V3 and MIT licenses are conveyed accordingly.
+MIT license is conveyed accordingly.
 <br/>
 Bugs can be reported @ michaeldba@sqlexec.com
 
